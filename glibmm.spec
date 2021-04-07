@@ -2,7 +2,7 @@
 %define _disable_rebuild_configure 1
 
 %define	pkgname	glibmm
-%define	api	2.4
+%define	api	2.68
 %define major	1
 %define	libname		%mklibname %{pkgname} %{api} %{major}
 %define	libdefs		%mklibname %{pkgname}_generate_extra_defs %{api} %{major}
@@ -11,7 +11,7 @@
 
 Summary:	C++ interface for glib
 Name:		%{pkgname}%{api}
-Version:	2.66.0
+Version:	2.68.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -22,8 +22,12 @@ BuildRequires:  meson
 BuildRequires:	doxygen
 BuildRequires:	xsltproc
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gmodule-2.0)
+BuildRequires:  pkgconfig(gobject-2.0)
+BuildRequires:  pkgconfig(sigc++-3.0)
 BuildRequires:	pkgconfig(mm-common-util)
-BuildRequires:	pkgconfig(sigc++-2.0)
 BuildRequires:  pkgconfig(libdevhelp-3.0)
 BuildRequires:  pkgconfig(gtk-doc)
 
@@ -77,6 +81,7 @@ when trying to develop or compile applications which need %{pkgname}.
 
 %build
 %meson \
+        -Dbuild-deprecated-api=true
 
 %meson_build
 
