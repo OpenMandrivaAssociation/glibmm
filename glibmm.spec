@@ -11,7 +11,7 @@
 
 Summary:	C++ interface for glib
 Name:		%{pkgname}%{api}
-Version:	2.68.0
+Version:	2.68.1
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
