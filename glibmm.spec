@@ -11,7 +11,7 @@
 
 Summary:	C++ interface for glib
 Name:		%{pkgname}%{api}
-Version:	2.72.1
+Version:	2.74.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -98,7 +98,7 @@ when trying to develop or compile applications which need %{pkgname}.
 %{_libdir}/libgiomm-%{api}.so.%{major}*
 
 %files -n %{devname}
-%doc COPYING NEWS README AUTHORS ChangeLog
+%doc COPYING NEWS README* AUTHORS ChangeLog
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/giomm-%{api}/
